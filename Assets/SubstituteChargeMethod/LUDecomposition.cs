@@ -8,6 +8,10 @@ public class LUDecomposition
 
     public LUDecomposition(double[,] mat, bool partialPivoting = false)
     {
+        if (partialPivoting)
+        {
+            throw new System.NotImplementedException("Partial pivoting is buggy.");
+        }
         var n = mat.GetLength(0);
         if (n != mat.GetLength(1))
         {
